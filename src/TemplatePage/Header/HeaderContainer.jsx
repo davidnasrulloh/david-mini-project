@@ -6,17 +6,16 @@ import appGalery from "./img/appGalery.png";
 import gambar1 from "./img/gambar1.png";
 import Navbar from "../Navbar/NavbarContainer";
 
-
 const Header = () => {
     return(
-        <div className="">
+        <div className="" id="header">
+            <Navbar/>
             <div className="background-header">
-                <div className="h-full bg-color">
-                    <Navbar/>
+                <div className="h-full bg-color pt-24">
                     <div className="container mx-auto">
-                        <div className="flex pt-20 pb-12 h-60">  
+                        <div className="flex pt-20 pb-12 h-64">  
                             <div className="grow">
-                                <h1 className="text-white text-6xl">Merasa patungan mu ribet ? <br/> yuk coba <span className="font-bold">patugin</span> aja</h1>
+                                <h1 className="text-white text-6xl leading-[120%]">Merasa patungan mu ribet ? <br/> yuk coba <span className="font-bold">patugin</span> aja</h1>
                             </div>
                             <div className="flex-none">
                                 <img src={gambar1} alt="Gambar Phone" className="header-phone" />
