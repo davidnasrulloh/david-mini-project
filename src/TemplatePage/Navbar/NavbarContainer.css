@@ -1,0 +1,27 @@
+.navbg-color {
+    background-color: #007474;
+}
+
+.navbar-menu {
+    display: flex;
+}
+
+.navbar-menu li {
+    display: flex;
+    margin-left: 20px;
+    padding: 12px 24px;
+}
+
+.navbar-menu li:hover {
+    color: white;
+    background-color: #0a9797;
+    border-radius: 12px;
+}
+
+.menu {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    /* text-align: left; */
+}

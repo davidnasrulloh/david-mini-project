@@ -1,0 +1,22 @@
+.footer-menu {
+    display: flex;
+    margin-top: 12px;
+}
+
+.footer-menu li {
+    color: white;
+    margin-right: 20px;
+}
+
+.social-media-icons img {
+    margin-left: 12px;
+}
+
+.social-media {
+    text-align: end;
+}
+
+.gambar-phone {
+    position: relative;
+    bottom: 120px;
+}
