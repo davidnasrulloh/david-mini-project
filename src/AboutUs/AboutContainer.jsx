@@ -1,12 +1,21 @@
 import React from "react";
 import "./AboutContainer.css";
-import Navbar from "../TemplatePage/Navbar/NavbarContainer";
+import FooterContainer from "../TemplatePage/Footer/FooterContainer";
+import About from "./About";
+import { SubscriptionTeams } from "../graphQL";
+
+import { useSubscription } from "@apollo/client";
+
+
 
 const AboutContainer = () => {
+
+    const {data, loading, error} = useSubscription(SubscriptionTeams);
+
     return(
         <>
-            <Navbar/>
-            <p> ini adalah halaman About</p>
+            <About teams={data} loading={loading}/>
+            <FooterContainer/>
         </>
     );
 }

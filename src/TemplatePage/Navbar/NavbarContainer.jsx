@@ -38,7 +38,7 @@ const Navbar = () => {
                                 </li>
                                 <li>Partnership</li>
                                 <li>
-                                    <Link to="/about-us">
+                                    <Link to="/about-us" onClick={scrollToTop} smooth={true} offset={50} duration={300} delay={500}>
                                         About Us
                                     </Link>
                                 </li>
