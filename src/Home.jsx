@@ -7,6 +7,7 @@ import Header from "./templatePage/Header/HeaderContainer";
 import { Link, animateScroll as scroll} from 'react-scroll';
 import PromoContainer from "./container/PromoContainer";
 import PartnerContainer from "./container/PartnerContainer";
+import HitungContainer from "./container/HitungContainer";
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
     return(
         <div class="scroll-smooth">
             <Header/>
+            <HitungContainer/>
             <TentangContainer/>
             <PromoContainer/>
             <PartnerContainer/>
