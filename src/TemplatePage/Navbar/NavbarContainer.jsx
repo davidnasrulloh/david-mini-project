@@ -2,13 +2,21 @@ import React from "react";
 import "./NavbarContainer.css";
 // import { Link } from "react-router-dom";
 import { HashLink as Link } from 'react-router-hash-link';
-import { animateScroll as scroll} from 'react-scroll';
+import { animateScroll as scroll, scroller} from 'react-scroll';
 import verticalLogo from "./img/vertical-logo.png";
 
 const Navbar = () => {
 
     const scrollToTop = () => {
         scroll.scrollToTop();
+    }
+
+    const scrollerCustomPromo = () => {
+        scroll.scrollTo(2900);
+    }
+
+    const scrollerCustomPartnership = () => {
+        scroll.scrollTo(3350);
     }
 
     return(
@@ -32,11 +40,15 @@ const Navbar = () => {
                                     </Link>    
                                 </li>
                                 <li>
-                                    <Link to="#promo">
+                                    <Link to="/#promo" onClick={scrollerCustomPromo} smooth={true} offset={50} duration={500} delay={1000}>
                                         Promo
                                     </Link>    
                                 </li>
-                                <li>Partnership</li>
+                                <li>
+                                    <Link to="/#partnership" onClick={scrollerCustomPartnership} smooth={true} offset={50} duration={500} delay={1000}>
+                                        Partnership 
+                                    </Link> 
+                                </li>
                                 <li>
                                     <Link to="/about-us" onClick={scrollToTop} smooth={true} offset={50} duration={300} delay={500}>
                                         About Us

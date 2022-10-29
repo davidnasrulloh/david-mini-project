@@ -1,8 +1,8 @@
 import React from "react";
 import "./AboutContainer.css";
-import FooterContainer from "../TemplatePage/Footer/FooterContainer";
+import FooterContainer from "../../templatePage/Footer/FooterContainer";
 import About from "./About";
-import { SubscriptionTeams } from "../graphQL";
+import { SubscriptionTeams } from "../../graphQL";
 
 import { useSubscription } from "@apollo/client";
 

@@ -1,9 +1,10 @@
 import React from "react";
-import Navbar from "../TemplatePage/Navbar/NavbarContainer";
+import Navbar from "../../templatePage/Navbar/NavbarContainer";
 import instagram from "./asset/instagram.svg";
 import linkedin from "./asset/linkedin.svg";
 import "./AboutContainer.css";
-import MyLoader from "../Component/MyLoader";
+import MyLoader from "../../component/MyLoader";
+import { Link } from "react-router-dom";
 
 
 const About = ({
@@ -40,10 +41,14 @@ const About = ({
                                             </div>
                                             <div className="mx-auto py-8 justify-center text-center">
                                                 <li className="flex">
-                                                    <img src={instagram} alt="instagram" className="w-8 mr-2" /><span className="my-auto text-lg font-semibold text-primary">{team.instagram}</span>
+                                                    <a href={`https://www.instagram.com/${team.instagram}`} rel="noreferrer" target="_blank" className="flex">
+                                                        <img src={instagram} alt="instagram" className="w-8 mr-2" /><span className="my-auto text-lg font-semibold text-primary">{team.instagram}</span>
+                                                    </a>
                                                 </li>
                                                 <li className="flex mt-2">
-                                                    <img src={linkedin} alt="linkedin" className="w-8 mr-2" /> <span className="my-auto text-lg font-semibold text-primary">{team.linkedin}</span>
+                                                    <a href={`https://linkedin.com/in/${team.linkedin}`} rel="noreferrer" target="_blank" className="flex">
+                                                        <img src={linkedin} alt="linkedin" className="w-8 mr-2" /> <span className="my-auto text-lg font-semibold text-primary">{team.linkedin}</span>
+                                                    </a>
                                                 </li>
                                             </div>
                                         </div>

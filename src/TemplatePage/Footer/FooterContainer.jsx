@@ -17,6 +17,14 @@ const Footer = () => {
         scroll.scrollToTop();
     }
 
+    const scrollerCustomPromo = () => {
+        scroll.scrollTo(2900);
+    }
+
+    const scrollerCustomPartnership = () => {
+        scroll.scrollTo(3350);
+    }
+
     return(
         <div className="bg-primary mt-44">
             <div className="container mx-auto">
@@ -54,8 +62,16 @@ const Footer = () => {
                                     Tentang Program
                                 </Link>
                             </li>
-                            <li>Promo</li>
-                            <li>Partnership</li>
+                            <li>
+                                <Link to="/#promo" onClick={scrollerCustomPromo} smooth={true} offset={50} duration={500} delay={1000}>
+                                    Promo
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/#partnership" onClick={scrollerCustomPartnership} smooth={true} offset={50} duration={500} delay={1000}>
+                                    Partnership 
+                                </Link>
+                            </li>
                         </ul>
                         <p className="text-lg text-white mt-2">© 2022 Patungin - PT. Asix Debit Indonesia Koe. All Rights Reserved.</p>
                     </div>
