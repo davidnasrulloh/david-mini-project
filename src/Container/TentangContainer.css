@@ -1,0 +1,20 @@
+.gambar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bulat {
+    background-color: #F4AE3F;
+}
+
+.content-why-trust {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.detail-coments {
+    justify-content: space-between;
+    align-content: space-between;
+}

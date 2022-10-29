@@ -1,25 +1,25 @@
 .background-header {
-  background-image: url(./img/cover.png);
-  background-size: cover;
-  /* height: 435px; */
-  /* background-color: #007474; */
-  /* filter: brightness(.8); */
-  /* filter: contrast(1.5); */
-  background-color: #007474;
+    background-image: url(./img/cover.png);
+    background-size: cover;
+    /* height: 435px; */
+    /* background-color: #007474; */
+    /* filter: brightness(.8); */
+    /* filter: contrast(1.5); */
+    background-color: #007474;
 }
 
 .wrapper-header {
-  background-color: #007474;
+    background-color: #007474;
 }
 
 .bg-color {
-  background: rgba(0, 116, 116, 0.7);
+    background: rgba(0, 116, 116, 0.7);
 }
 
 .header-phone {
-  height: 470px;
-  width: 400px;
-  position: relative;
-  top: -90px;
-  margin-right: 120px;
+    height: 470px;
+    width: 400px;
+    position: relative;
+    top: -90px;
+    margin-right: 120px;
 }
