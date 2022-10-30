@@ -10,7 +10,7 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    team: teamReducer,
+    team: teamReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

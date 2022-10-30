@@ -3,47 +3,34 @@ import "./Hitung.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
+// import { setNamaItem, setJumlahItem, setHargaItem, setListData } from "../features/hitungSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 
-const Hitung = () => {
-
-    const [itemsList, setItemsList] = useState([{
-        namaItem: "", 
-        jumlahItem: 0, 
-        hargaItem: 0
-    }]);
+const Hitung = ({
+    itemsList,
+    handleItemChange,
+    handleItemAdd,
+    handleItemRemove
+}) => {
 
     const [jumlahMember, setJumlahMember] = useState(0);
+    const [jumlahPatungan, setJumlahPatungan] = useState(0);
+
+    const handleViewTotalPatungan = () => {
+        let totalHargaBarang = 0;
+        itemsList.map((item)=>(
+            totalHargaBarang += +item.jumlahItem * +item.hargaItem 
+        ))
+        setJumlahPatungan(totalHargaBarang/jumlahMember);
+    }
 
     const handleJumlahMemberChange = (ev) => {
         setJumlahMember(ev.target.value);
         // console.log(jumlahMember);
     }
 
-    const handleItemChange = (e, index) => {
-        const { name, value } = e.target;
-        const list = [...itemsList];
-        list[index][name] = value;
-        setItemsList(list);
-        console.log(list);
-    }
-
-    const handleItemRemove = (index) => {
-        const list = [...itemsList];
-        list.splice(index, 1);
-        setItemsList(list);
-        // console.log(list);
-    }
-
-    const handleItemAdd = () => {
-        setItemsList([...itemsList, {
-            namaItem: "", 
-            jumlahItem: 0, 
-            hargaItem: 0
-        }])
-    }
-
-    console.log(itemsList[0].hargaItem);
     return(
         <>
             <div className="mb-20">
@@ -80,8 +67,7 @@ const Hitung = () => {
                                                             id="namaItem" 
                                                             className="w-80 py-6 px-8 m-4 h-8 border-primary border-2 rounded-xl text-primary text-lg" 
                                                             placeholder="Masukkan nama item" 
-                                                            autoComplete="off" 
-                                                            value={singleItems.namaItem}
+                                                            autoComplete="off"
                                                             onChange={(ev)=>handleItemChange(ev, index)}
                                                             required
                                                             />
@@ -93,7 +79,6 @@ const Hitung = () => {
                                                             id="jumlahItem" 
                                                             className="w-80 py-6 px-8 m-4 h-8 border-primary border-2 rounded-xl text-primary text-lg" 
                                                             placeholder="Jumlah item" 
-                                                            value={singleItems.jumlahItem}
                                                             onChange={(ev)=>handleItemChange(ev, index)}
                                                             required
                                                             />
@@ -105,7 +90,6 @@ const Hitung = () => {
                                                             id="hargaItem" 
                                                             className="w-80 py-6 px-8 m-4 h-8 border-primary border-2 rounded-xl text-primary text-lg" 
                                                             placeholder="Harga per item" 
-                                                            value={singleItems.hargaItem}
                                                             onChange={(ev)=>handleItemChange(ev, index)}
                                                             required/>
                                                     </div>
@@ -150,8 +134,8 @@ const Hitung = () => {
                     <hr className="border-2 mb-8 mt-8"/>
                     {/* Hasil nya nanti */}
                     <div className="my-8 flex justify-start items-center">
-                        <p className="text-xl px-8 py-4 rounded-lg bg-primary text-white w-1/5">Total Patungan Per Orang </p>
-                        <p className="text-2xl font-bold mx-12 text-primary"> : Hasil nya nanti disini</p>
+                        <button className="text-xl px-8 py-4 rounded-lg bg-primary text-white w-1/3" onClick={handleViewTotalPatungan}>Tampilkan Total Patungan Per Orang </button>
+                        <p className="text-2xl font-bold mx-12 text-primary"> : {jumlahPatungan}</p>
                     </div>
                     <hr className="border-2 mb-8"/>
                     <div className="flex justify-center">

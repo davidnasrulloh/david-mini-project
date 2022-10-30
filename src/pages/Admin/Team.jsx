@@ -208,7 +208,10 @@ const Team = ({
                     </div>
                 </div>
             </form>
-            <button className="w-full text-center border-y-2 py-4" onClick={()=>handleTambah()} style={viewMode}> <FontAwesomeIcon icon={faClose} /> close edit</button>
+            <button 
+                className="w-full text-center border-y-2 py-4" 
+                onClick={()=>handleTambah()} 
+                style={viewMode}><FontAwesomeIcon icon={faClose} /> close edit</button>
 
             <div className="">
                 <h3 className="text-primary text-2xl mt-12 font-semibold">Detail Data</h3>
