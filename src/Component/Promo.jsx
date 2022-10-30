@@ -16,8 +16,8 @@ const Promo = () => {
     };
 
     return(
-        <div className="my-8 container mx-auto">
-            <h1 className="text-primary font-bold text-3xl text-center">Promo Menarik Untuk Mu!</h1>
+        <div className="container mx-auto">
+            <h1 className="text-primary font-bold text-3xl text-center pt-32 mb-16">Promo Menarik Untuk Mu!</h1>
             <Slider {...settings} className="my-12 mx-32">
                 <div className=""><img src={require('./img/promo/promo1.png')} alt="Credit to Joshua Earle on Unsplash"/></div>
                 <div className=""><img src={require('./img/promo/promo2.png')} alt="Credit to Alisa Anton on Unsplash"/></div>

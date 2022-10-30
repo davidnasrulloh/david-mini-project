@@ -17,13 +17,6 @@ const Footer = () => {
         scroll.scrollToTop();
     }
 
-    const scrollerCustomPromo = () => {
-        scroll.scrollTo(2900);
-    }
-
-    const scrollerCustomPartnership = () => {
-        scroll.scrollTo(3350);
-    }
 
     return(
         <div className="bg-primary mt-44">
@@ -59,16 +52,16 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link to="/#tentangProgram" smooth={true} offset={50} duration={500} delay={1000}>
-                                    Tentang Program
+                                    Tentang Aplikasi
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/#promo" onClick={scrollerCustomPromo} smooth={true} offset={50} duration={500} delay={1000}>
+                                <Link to="/#promo" smooth={true} offset={50} duration={500} delay={1000}>
                                     Promo
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/#partnership" onClick={scrollerCustomPartnership} smooth={true} offset={50} duration={500} delay={1000}>
+                                <Link to="/#partnership" smooth={true} offset={50} duration={500} delay={1000}>
                                     Partnership 
                                 </Link>
                             </li>

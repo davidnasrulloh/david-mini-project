@@ -119,9 +119,9 @@ const TentangContainer = () => {
                 </div>
 
                 {/* What he say ? */}
-                <div className="container mx-auto mt-12">
+                <div className="container mx-auto mt-32">
                     <div className="flex flex-col">
-                        <h1 className="text-primary font-bold text-3xl text-center">Apa Kata Mereka?</h1>
+                        <h1 className="text-primary font-bold text-3xl text-center mb-12">Apa Kata Mereka?</h1>
                         <div className="flex">
                             <div className="flex-1">
                                 <CardFeedback 

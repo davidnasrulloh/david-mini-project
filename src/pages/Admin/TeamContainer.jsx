@@ -38,7 +38,6 @@ const TeamContainer = () => {
         })
         // console.log(newValue);
     }
-
     
     const getAllCard = async () => {
         const response = await data;

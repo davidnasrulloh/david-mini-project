@@ -18,7 +18,7 @@ const About = ({
             <div className="pt-32 pb-12">
                 <div className="container mx-auto">
                     <div className="">
-                        <p className="text-primary text-4xl font-bold text-center mt-4">Team Patungin Group</p>
+                        <p className="text-primary text-4xl font-bold text-center mt-4">Tentang Kita | Team Patungin Group</p>
                         <div className="mt-12">
                             <div className="flex flex-wrap justify-center">
                                 {

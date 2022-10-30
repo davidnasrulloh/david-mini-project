@@ -25,11 +25,11 @@ const Admin = () => {
                             </TabSelector>
                             <TabSelector
                                 isActive={selectedTab === "promo"}
-                                onClick={() => setSelectedTab("promo")}>Sponsorship
+                                onClick={() => setSelectedTab("promo")}>Promo
                             </TabSelector>
                             <TabSelector
                                 isActive={selectedTab === "sponsor"}
-                                onClick={() => setSelectedTab("sponsor")}>Promo
+                                onClick={() => setSelectedTab("sponsor")}>Sponsorship
                             </TabSelector>
                         </nav>
                         <div className="p-4">
