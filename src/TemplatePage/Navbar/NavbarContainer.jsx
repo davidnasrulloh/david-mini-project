@@ -12,36 +12,36 @@ const Navbar = () => {
     }
 
     return(
-        <div className="navbg-color h-24 fixed w-full z-50 drop-shadow-xl max-[620px]:w-full max-[620px]:h-auto">
+        <div className="navbg-color h-24 fixed w-full z-50 drop-shadow-xl max-[768px]:w-full max-[768px]:h-auto">
             <div className="container mx-auto">
                 <div className="align-self-center">
-                    <div className="flex justify-between max-[620px]:flex-col">
-                        <div className="max-[620px]:w-full max-[620px]:flex max-[620px]:justify-center">
+                    <div className="flex justify-between max-[768px]:flex-col">
+                        <div className="max-[768px]:w-full max-[768px]:flex max-[768px]:justify-center">
                             <img src={verticalLogo} className="w-32 my-4" alt="" />
                         </div>
-                        <div className="my-auto text-xl text-white max-[620px]:text-sm">
-                            <ul className="navbar-menu max-[620px]:flex max-[620px]:flex-wrap max-[620px]:justify-center">
-                                <li className="max-[620px]:py-10">
+                        <div className="my-auto text-xl text-white max-[768px]:text-sm max-[768px]:w-full">
+                            <ul className="navbar-menu max-[768px]:flex max-[768px]:flex-wrap max-[768px]:justify-center">
+                                <li className="max-[768px]:py-10">
                                     <Link to="/" onClick={scrollToTop} smooth={true} offset={50} duration={300} delay={500}>
                                         Home
                                     </Link>
                                 </li>
-                                <li className="max-[620px]:ml-1">
+                                <li className="max-[768px]:ml-1">
                                     <Link to="/#tentangProgram" smooth={true} offset={50} duration={500} delay={1000}>
                                         Tentang Aplikasi
                                     </Link>    
                                 </li>
-                                <li className="max-[620px]:ml-1">
+                                <li className="max-[768px]:ml-1">
                                     <Link to="/#promo" smooth={true} offset={50} duration={500} delay={1000}>
                                         Promo
                                     </Link>    
                                 </li>
-                                <li className="max-[620px]:ml-1">
+                                <li className="max-[768px]:ml-1">
                                     <Link to="/#partnership" smooth={true} offset={50} duration={500} delay={1000}>
                                         Partnership 
                                     </Link> 
                                 </li>
-                                <li className="max-[620px]:ml-1">
+                                <li className="max-[768px]:ml-1">
                                     <Link to="/about-us" onClick={scrollToTop} smooth={true} offset={50} duration={300} delay={500}>
                                         Team Product
                                     </Link>

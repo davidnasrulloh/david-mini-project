@@ -3,6 +3,7 @@ import { faTrash, faPenToSquare, faPlus, faClose } from '@fortawesome/free-solid
 import React, { useEffect, useState } from "react";
 import ContentLoader from 'react-content-loader';
 import { gql, useMutation } from "@apollo/client";
+import toast, { Toaster } from 'react-hot-toast';
 // import { UpdateTeam } from "../graphQL";
 
 const UpdateTeam = gql`
@@ -176,11 +177,18 @@ const Team = ({
                 role: formEditData.role,
             }
         })
+        toast.success('Ubah Data Berhasil !');
+        setEditing(true);
+        setImagePreview(null);
     }
 
 
     return(
         <>
+            <Toaster
+                position="top-right"
+                reverseOrder={true}
+            />
             {/* Tambah Data */}
             <form action="" onSubmit={handleSubmit} style={editMode}>
                 <div className="flex my-4">
