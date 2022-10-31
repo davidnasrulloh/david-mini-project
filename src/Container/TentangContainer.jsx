@@ -13,7 +13,7 @@ import "./TentangContainer.css";
 const CardFeedback = ({comment, nama, status, umur, background}) => (
     <div className="mt-12">
         <div className="p-6 mx-12" style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
-            <div className="h-44">
+            <div className="h-44 max-[620px]:h-auto">
                 <div className="h-3/4">
                     <p className="w-3/4 text-white mb-12">"<span>{comment}</span> "</p>
                 </div>
@@ -42,11 +42,11 @@ const TentangContainer = () => {
                 {/* Tentang Kami */}
                 <div className="bg-primary py-6">
                     <div className="container mx-auto">
-                        <div className="flex flex-row">
+                        <div className="flex flex-row max-[620px]:flex-col">
                             <div className="flex-1 gambar-wrapper">
                                 <img src={mockup1} className="w-3/4" alt="Mockup 1" />
                             </div>
-                            <div className="flex-1 my-auto">
+                            <div className="flex-1 my-auto max-[620px]:px-12 max-[620px]:mb-12">
                                 <h2 className="text-white font-bold text-4xl mb-3">Tentang Kami</h2>
                                 <p className="text-white text-xl">Mau patungan apapun dengan  teman jadi lebih mudah dengan hanya menggunakan aplikasi Patungin. Kamu juga bisa melakukan patungan dengan patungin mulai dari patungan PLN, patungan PDAM, patungan Internet, hingga akun premium dari netflix, spotify dan masih banyak lagi. </p>
                             </div>
@@ -58,9 +58,9 @@ const TentangContainer = () => {
                 <div className="bg-white py-12">
                     <div className="container mx-auto">
                         <div className="text-center">
-                            <h1 className="text-primary font-bold text-3xl">Mulai Patungan dengan Mudah, Cepat & Nyaman</h1>
+                            <h1 className="text-primary font-bold text-3xl max-[620px]:px-8">Mulai Patungan dengan Mudah, Cepat & Nyaman</h1>
                         </div>
-                        <div className="py-8 flex">
+                        <div className="py-8 flex max-[620px]:flex-col">
                             <CardWhyTrust gambar={gambar1}
                                             judul="Patungan Cepat"
                                             text="Tak perlu ribet lagi hitung manual bayar patunganmu! Cukup scan billnya dengan OCR dan dapatkan pembagian bayarannya dengan mudah dan cepat."/>
@@ -77,10 +77,10 @@ const TentangContainer = () => {
                 {/* Fitur di patungin */}
                 <div className="bg-primary py-12" style={{ backgroundImage: `url(${logoback})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
                     <div className="container mx-auto justify-content-center">
-                        <h1 className="text-white font-bold text-3xl text-center">Mulai Patungan dengan Mudah, Cepat & Nyaman</h1>
-                        <div className="flex py-12 mt-4 content-why-trust">
-                            <div className="flex-1">
-                                <div className="h-60">
+                        <h1 className="text-white font-bold text-3xl text-center max-[620px]:px-8">Mulai Patungan dengan Mudah, Cepat & Nyaman</h1>
+                        <div className="flex py-12 mt-4 content-why-trust max-[620px]:flex-col max-[620px]:px-12">
+                            <div className="flex-1 max-[620px]:mb-8">
+                                <div className="h-60 max-[620px]:h-auto max-[620px]:mb-4">
                                     <h3 className="text-secondary text-2xl font-semibold">Keep track of payment</h3>
                                     <div className="flex mt-4">
                                         <span className="w-24 h-12 bulat rounded-full my-auto"></span>
@@ -96,7 +96,7 @@ const TentangContainer = () => {
                                 </div>
                             </div>
                             <div className="flex-1">
-                                <img src={phone} alt="phone" className="h-128 mx-auto" />
+                                <img src={phone} alt="phone" className="h-128 mx-auto max-[620px]:hidden" />
                             </div>
                             <div className="flex-1 text-right">
                                 <div className=" h-60">
@@ -119,10 +119,10 @@ const TentangContainer = () => {
                 </div>
 
                 {/* What he say ? */}
-                <div className="container mx-auto mt-32">
+                <div className="container mx-auto mt-32 max-[620px]:mt-12">
                     <div className="flex flex-col">
-                        <h1 className="text-primary font-bold text-3xl text-center mb-12">Apa Kata Mereka?</h1>
-                        <div className="flex">
+                        <h1 className="text-primary font-bold text-3xl text-center mb-12 max-[620px]:mb-2">Apa Kata Mereka?</h1>
+                        <div className="flex max-[620px]:flex-col">
                             <div className="flex-1">
                                 <CardFeedback 
                                     background={person1}
