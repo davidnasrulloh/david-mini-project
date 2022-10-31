@@ -38,7 +38,7 @@ const CardWhyTrust = ({gambar, judul, text}) => (
 const TentangContainer = () => {
     return(
         <div id="tentangProgram">
-            <div className="pb-12">
+            <div className="pb-2">
                 {/* Tentang Kami */}
                 <div className="bg-primary py-6">
                     <div className="container mx-auto">

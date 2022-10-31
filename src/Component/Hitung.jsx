@@ -5,6 +5,7 @@ import { faPlus, faTrash, faCalculator } from '@fortawesome/free-solid-svg-icons
 import { useState } from "react";
 // import { setNamaItem, setJumlahItem, setHargaItem, setListData } from "../features/hitungSlice";
 import { useDispatch, useSelector } from "react-redux";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Hitung = ({
@@ -23,6 +24,7 @@ const Hitung = ({
             totalHargaBarang += +item.jumlahItem * +item.hargaItem 
         ))
         setJumlahPatungan(totalHargaBarang/jumlahMember);
+        toast.success('Perhitungan Patungan Berhasil !');
     }
 
 
@@ -33,16 +35,16 @@ const Hitung = ({
 
     return(
         <>
-            <div className="mb-20 max-[620px]:mb-12">
+            <div className="mb-20 max-[768px]:mb-12">
                 <div className="container mx-auto">
                     {/* <hr className="mb-16"/> */}
-                    <div className="flex max-[620px]:flex-col max-[620px]:text-center max-[620px]:px-0">
-                        <div className="w-3/4 mr-12 max-[620px]:mr-2 max-[620px]:w-full">
+                    <div className="flex max-[768px]:flex-col max-[768px]:text-center max-[768px]:px-0">
+                        <div className="w-3/4 mr-12 max-[768px]:mr-2 max-[768px]:w-full">
                             <div className="flex justify-between items-center mb-12">
-                                <h1 className="font-bold text-primary text-3xl max-[620px]:px-12">Coba Hitung Patunganmu !</h1>                                
+                                <h1 className="font-bold text-primary text-3xl max-[768px]:px-12">Coba Hitung Patunganmu !</h1>                                
                             </div>
                             {/* Header Judul */}
-                            <div className="flex flex-row text-center mt-6 font-bold text-xl text-primary mb-4 mr-12 max-[620px]:hidden">
+                            <div className="flex flex-row text-center mt-6 font-bold text-xl text-primary mb-4 mr-12 max-[768px]:hidden">
                                 <div className="flex-1">
                                     Nama Item
                                 </div>
@@ -57,9 +59,9 @@ const Hitung = ({
                             <form className="" autoComplete="off">
                                 {
                                     itemsList.map((singleItems, index) => (
-                                        <div className="flex max-[620px]:justify-center" key={index}>
-                                            <div className="first-division text-center max-[620px]:mb-8">
-                                                <div className="flex max-[620px]:flex-col">
+                                        <div className="flex max-[768px]:justify-center" key={index}>
+                                            <div className="first-division text-center max-[768px]:mb-8">
+                                                <div className="flex max-[768px]:flex-col">
                                                     <div className="flex-1">
                                                         <input 
                                                             type="text" 
@@ -109,8 +111,8 @@ const Hitung = ({
                                                 {
                                                     itemsList.length - 1 === index && itemsList.length < 10 && (
                                                         
-                                                        <button className="mr-8 py-2 px-8 mt-4 bg-primary text-white text-lg font-bold rounded-xl max-[620px]:mr-0" type="button"
-                                                            onClick={handleItemAdd}><FontAwesomeIcon icon={faPlus} className="mr-4" />Tambah Items</button>
+                                                        <button className="mr-8 py-2 px-8 mt-4 bg-primary text-white text-lg font-bold rounded-xl max-[768px]:mr-0" type="button"
+                                                            onClick={handleItemAdd}><FontAwesomeIcon icon={faPlus} className="mr-4" />Tambah Item</button>
                                                     )
                                                 }
                                             </div>       
@@ -119,8 +121,8 @@ const Hitung = ({
                                 }
                             </form>
                         </div>
-                        <div className="w-1/4 flex flex-col items-center border-l-4 max-[620px]:w-full max-[620px]:border-t-4 max-[620px]:border-l-0">
-                            <h4 className="text-primary font-bold text-2xl max-[620px]:px-12 max-[620px]:w-full max-[620px]:py-8">Jumlah Anggota Patungan</h4>
+                        <div className="w-1/4 flex flex-col items-center border-l-4 max-[768px]:w-full max-[768px]:border-t-4 max-[768px]:border-l-0">
+                            <h4 className="text-primary font-bold text-2xl max-[768px]:px-12 max-[768px]:w-full max-[768px]:py-8">Jumlah Anggota Patungan</h4>
                             <div className="my-auto">
                             <input 
                                 type="text" 
@@ -131,11 +133,15 @@ const Hitung = ({
                             </div>
                         </div>
                     </div>
+                    <Toaster
+                        position="top-center"
+                        reverseOrder={true}
+                    />
                     <hr className="border-b-4 mb-8 mt-8"/>
                     {/* Hasil nya nanti */}
-                    <div className="my-8 flex justify-start items-center max-[620px]:flex-col">
-                        <button className="text-xl py-4 rounded-lg bg-primary text-white w-1/4 max-[620px]:w-3/4 max-[620px]:mb-8 max-[620px]:px-2 max-[620px]:text-lg" onClick={handleViewTotalPatungan}><FontAwesomeIcon icon={faCalculator} className="mr-4" /> Hitung Patungan Per Orang </button>
-                        <p className="text-4xl font-bold mx-12 text-primary"> : {jumlahPatungan} / Orang</p>
+                    <div className="my-8 flex justify-start items-center max-[768px]:flex-col">
+                        <button className="text-xl py-4 rounded-lg bg-primary text-white w-1/4 max-[768px]:w-3/4 max-[768px]:mb-8 max-[768px]:px-2 max-[768px]:text-lg" onClick={handleViewTotalPatungan}><FontAwesomeIcon icon={faCalculator} className="mr-4" /> Hitung Patungan Per Orang </button>
+                        <p className="text-4xl font-bold mx-12 text-primary"> : Rp. {jumlahPatungan},00 / Orang</p>
                     </div>
                     <hr className="border-t-4 mb-8"/>
                     <div className="flex justify-center">

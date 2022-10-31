@@ -6,6 +6,7 @@ import Team from "./Team";
 import { setCards } from "../../features/teamSlice"
 import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
 
 const TeamContainer = () => {
 
@@ -103,7 +104,7 @@ const TeamContainer = () => {
         // .then((res) => {
         //     setArticles(prevState => [...prevState, res.data.insert__onetomany_article.returning[0]])
         // })
-
+        toast.success('Tambah Data Berhasil !');
     }
 
 
@@ -119,6 +120,7 @@ const TeamContainer = () => {
         }
         // console.log(idx);
         // window.location.reload();
+        toast.success('Hapus Data Berhasil !');
     }
     // console.log(res);
     return(
