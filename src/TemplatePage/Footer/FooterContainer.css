@@ -20,3 +20,14 @@
     position: relative;
     bottom: 120px;
 }
+
+@media only screen and (max-width: 600px) {
+    .gambar-phone {
+        position: relative;
+        bottom: 80px;
+    }
+    .social-media-icons img {
+        margin-left: 2px;
+        width: 5vh;
+    }
+}
