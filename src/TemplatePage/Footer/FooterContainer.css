@@ -30,4 +30,8 @@
         margin-left: 2px;
         width: 5vh;
     }
+    .footer-menu li {
+        color: white;
+        margin-right: 0px;
+    }
 }

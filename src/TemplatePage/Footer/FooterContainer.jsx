@@ -18,16 +18,16 @@ const Footer = () => {
     }
 
     return(
-        <div className="bg-primary mt-44">
+        <div className="bg-primary mt-32">
             <div className="container mx-auto">
                 <div className="flex flex-row px-36 h-60 max-[620px]:h-auto max-[620px]:mb-8 max-[620px]:px-[0px] max-[620px]:flex-col ">
                     <div className="flex-auto w-20 max-[620px]:w-32">
                         <div className="flex flex-row justify-content-start align-items-center">
                             {/* <p className="object-center">cok</p> */}
-                            <img src={gambar1} alt="Gambar App Patungin" className="w-44 gambar-phone left-auto ml-40 drop-shadow-xl rounded-2xl max-[620px]:ml-32" />
+                            <img src={gambar1} alt="Gambar App Patungin" className="w-44 gambar-phone left-auto ml-40 drop-shadow-xl rounded-2xl max-[620px]:m-10" />
                         </div>
                     </div>
-                    <div className="flex-auto w-96 text-white pt-20 max-[620px]:pt-2 max-[620px]:px-12">
+                    <div className="flex-auto w-96 text-white pt-20 max-[620px]:pt-[0] max-[620px]:px-12">
                         <h2 className="text-3xl font-bold mb-2 max-[620px]:text-lg">Patungan #MUDAHBANGET Sekarang!</h2>
                         <p>Download Patungin Sekarang</p>
                         <div className="mt-4 flex max-[620px]:flex max-[620px]:flex-col" >
@@ -67,7 +67,7 @@ const Footer = () => {
                         </ul>
                         <p className="text-lg text-white mt-2 max-[620px]:text-sm">© 2022 Patungin - PT. Asix Debit Indonesia Koe. All Rights Reserved.</p>
                     </div>
-                    <div>
+                    <div className="flex max-[620px]:justify-center">
                         <div className="flex w-96 justify-end max-[620px]:justify-center max-[620px]:mt-6">
                             <div className="social-media">
                                 <p className="font-bold text-white mb-5 max-[620px]:text-center max-[620px]:text-sm">Our Social Media</p>

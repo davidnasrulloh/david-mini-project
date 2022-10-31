@@ -15,10 +15,10 @@ const About = ({
     return(
         <>
             <Navbar/>
-            <div className="pt-32 pb-12">
+            <div className="pt-32 pb-12 max-[620px]:pt-48">
                 <div className="container mx-auto">
                     <div className="">
-                        <p className="text-primary text-4xl font-bold text-center mt-4">Tentang Kita | Team Patungin Group</p>
+                        <p className="text-primary text-4xl font-bold text-center mt-4 max-[620px]:text-3xl max-[620px]:px-12">Tentang Kita | Team Patungin Group</p>
                         <div className="mt-12">
                             <div className="flex flex-wrap justify-center">
                                 {
