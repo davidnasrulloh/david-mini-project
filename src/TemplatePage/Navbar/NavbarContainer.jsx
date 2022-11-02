@@ -17,7 +17,9 @@ const Navbar = () => {
                 <div className="align-self-center">
                     <div className="flex justify-between max-[768px]:flex-col">
                         <div className="max-[768px]:w-full max-[768px]:flex max-[768px]:justify-center">
-                            <img src={verticalLogo} className="w-32 my-4" alt="" />
+                            <Link to="/" onClick={scrollToTop} smooth={true} offset={50} duration={300} delay={500}>
+                                <img src={verticalLogo} className="w-32 my-4" alt="" />
+                            </Link>
                         </div>
                         <div className="my-auto text-xl text-white max-[768px]:text-sm max-[768px]:w-full">
                             <ul className="navbar-menu max-[768px]:flex max-[768px]:flex-wrap max-[768px]:justify-center">
