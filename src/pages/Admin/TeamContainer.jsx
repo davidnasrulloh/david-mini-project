@@ -117,10 +117,10 @@ const TeamContainer = () => {
                     variables: {id: idx},
                 }
             );
+            toast.success('Hapus Data Berhasil !');
         }
         // console.log(idx);
         // window.location.reload();
-        toast.success('Hapus Data Berhasil !');
     }
     // console.log(res);
     return(
