@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hitung from "../component/Hitung";
 
 const HitungContainer = () => {
@@ -22,7 +22,16 @@ const HitungContainer = () => {
         const list = [...itemsList];
         list.splice(index, 1);
         setItemsList(list);
-        console.log(index);
+        console.log(list);
+    }
+
+    const deleteFillItems = (e, index) => {
+        setItemsList([{
+            namaItem: "", 
+            jumlahItem: 0, 
+            hargaItem: 0
+        }]);
+        // console.log("pp");
     }
 
     const handleItemAdd = () => {
@@ -37,6 +46,7 @@ const HitungContainer = () => {
         <>
             <Hitung 
                 itemsList={itemsList} 
+                deleteFillItems={deleteFillItems}
                 handleItemChange={handleItemChange}
                 handleItemRemove={handleItemRemove}
                 handleItemAdd={handleItemAdd}/>
