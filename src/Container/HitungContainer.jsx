@@ -22,7 +22,7 @@ const HitungContainer = () => {
         const list = [...itemsList];
         list.splice(index, 1);
         setItemsList(list);
-        // console.log(list);
+        console.log(index);
     }
 
     const handleItemAdd = () => {
