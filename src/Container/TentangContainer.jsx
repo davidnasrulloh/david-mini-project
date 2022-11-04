@@ -26,9 +26,9 @@ const CardFeedback = ({comment, nama, status, umur, background}) => (
     </div>
 )    
 
-const CardWhyTrust = ({gambar, judul, text}) => (
-    <div className="m-12">
-        <img src={gambar} alt="Gambar 1" className="h-60 mx-auto mb-8" />
+const CardWhyTrust = ({gambar, judul, text, efect}) => (
+    <div className="m-12" data-aos={efect} data-aos-offset="500" data-aos-duration="1000">
+    <img src={gambar} alt="Gambar 1" className="h-60 mx-auto mb-8"/>
         <h3 className="text-primary font-bold text-xl mb-2">{judul}</h3>
         <p className="text-primary text-lg mb-2 text-justify">{text}</p>
     </div>
@@ -37,7 +37,7 @@ const CardWhyTrust = ({gambar, judul, text}) => (
 
 const TentangContainer = () => {
     return(
-        <div id="tentangProgram">
+        <div>
             <div className="pb-2">
                 {/* Tentang Kami */}
                 <div className="bg-primary py-6">
@@ -61,13 +61,16 @@ const TentangContainer = () => {
                             <h1 className="text-primary font-bold text-3xl max-[620px]:px-8">Mulai Patungan dengan Mudah, Cepat & Nyaman</h1>
                         </div>
                         <div className="py-8 flex max-[620px]:flex-col">
-                            <CardWhyTrust gambar={gambar1}
+                            <CardWhyTrust   gambar={gambar1}
+                                            efect="fade-left"
                                             judul="Patungan Cepat"
                                             text="Tak perlu ribet lagi hitung manual bayar patunganmu! Cukup scan billnya dengan OCR dan dapatkan pembagian bayarannya dengan mudah dan cepat."/>
                             <CardWhyTrust gambar={gambar2}
+                                            efect="fade-up"
                                             judul="Tercatat Dengan Baik"
                                             text="Lupa bayar apa aja kemarin? Sekarang, bisa gak perlu khawatir karena Patungin bisa catat pengeluaran patunganmu dengan rapi"/>
                             <CardWhyTrust gambar={gambar3}
+                                            efect="fade-right"
                                             judul="Pembayaran Mudah"
                                             text="Hanya dengan satu klik, bayar patunganmu jadi lebih mudah dengan opsi pembayaran E-wallet yang beragam, dan langsung tercatat."/>
                         </div>
@@ -75,42 +78,46 @@ const TentangContainer = () => {
                 </div>
 
                 {/* Fitur di patungin */}
-                <div className="bg-primary py-12" style={{ backgroundImage: `url(${logoback})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
-                    <div className="container mx-auto justify-content-center">
-                        <h1 className="text-white font-bold text-3xl text-center max-[620px]:px-8">Mulai Patungan dengan Mudah, Cepat & Nyaman</h1>
-                        <div className="flex py-12 mt-4 content-why-trust max-[620px]:flex-col max-[620px]:px-12">
-                            <div className="flex-1 max-[620px]:mb-8">
-                                <div className="h-60 max-[620px]:h-auto max-[620px]:mb-4">
-                                    <h3 className="text-secondary text-2xl font-semibold">Keep track of payment</h3>
-                                    <div className="flex mt-4">
-                                        <span className="w-24 h-12 bulat rounded-full my-auto"></span>
-                                        <p className="text-white text-lg ml-8">Gak perlu hitung manual lagi, scan bill dengan OCR dan dapatkan pembagian split bill dengan mudah!</p>
+                <div className="py-20" id="tentangProgram">
+                    <div className="bg-primary py-12" style={{ backgroundImage: `url(${logoback})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                        <div className="container mx-auto justify-content-center">
+                            <h1 className="text-white font-bold text-3xl text-center max-[620px]:px-8">Mulai Patungan dengan Mudah, Cepat & Nyaman</h1>
+                            <div className="flex py-12 mt-4 content-why-trust max-[620px]:flex-col max-[620px]:px-12">
+                                <div className="flex-1 max-[620px]:mb-8" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1100">
+                                    <div className="h-60 max-[620px]:h-auto max-[620px]:mb-4">
+                                        <h3 className="text-secondary text-2xl font-semibold">Keep track of payment</h3>
+                                        <div className="flex mt-4">
+                                            <span className="w-24 h-12 bulat rounded-full my-auto"></span>
+                                            <p className="text-white text-lg ml-8">Gak perlu hitung manual lagi, scan bill dengan OCR dan dapatkan pembagian split bill dengan mudah!</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-secondary text-2xl font-semibold">Scan Bill Receipt</h3>
+                                        <div className="flex mt-4">
+                                            <span className="w-24 h-12 bulat rounded-full my-auto"></span>
+                                            <p className="text-white text-lg ml-8">Gak perlu hitung manual lagi, scan bill dengan OCR dan dapatkan pembagian split bill dengan mudah!</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-secondary text-2xl font-semibold">Scan Bill Receipt</h3>
-                                    <div className="flex mt-4">
-                                        <span className="w-24 h-12 bulat rounded-full my-auto"></span>
-                                        <p className="text-white text-lg ml-8">Gak perlu hitung manual lagi, scan bill dengan OCR dan dapatkan pembagian split bill dengan mudah!</p>
-                                    </div>
+                                
+                                <div className="flex-1" data-aos="fade-up" data-aos-duration="1000" >
+                                    <img src={phone} alt="phone" className="h-128 mx-auto max-[620px]:hidden" />
                                 </div>
-                            </div>
-                            <div className="flex-1">
-                                <img src={phone} alt="phone" className="h-128 mx-auto max-[620px]:hidden" />
-                            </div>
-                            <div className="flex-1 text-right">
-                                <div className=" h-60">
-                                    <h3 className="text-secondary text-2xl font-semibold">Bisa buat circle chat juga loh!</h3>
-                                    <div className="flex mt-4">                                    
-                                        <p className="text-white text-lg mr-8">Bisa mudahin kamu nih yang orangnya suka nongkrong, tinggal buat aja grup chat atau circle buat patungan nanti kalo lagi nongkrong</p>
-                                        <span className="w-28 h-12 bulat rounded-full my-auto"></span>
+
+                                <div className="flex-1 text-right" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                                    <div className=" h-60">
+                                        <h3 className="text-secondary text-2xl font-semibold">Bisa buat circle chat juga loh!</h3>
+                                        <div className="flex mt-4">                                    
+                                            <p className="text-white text-lg mr-8">Bisa mudahin kamu nih yang orangnya suka nongkrong, tinggal buat aja grup chat atau circle buat patungan nanti kalo lagi nongkrong</p>
+                                            <span className="w-28 h-12 bulat rounded-full my-auto"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <h3 className="text-secondary text-2xl font-semibold">Berbagai Macam Split Bill</h3>
-                                    <div className="flex mt-4 mx-auto">
-                                        <p className="text-white text-lg mr-8">Hanya dengan satu sentuhan kamu bisa merasakan berbagai manacam split bill seperti PLN, Internet, PDAM, dan masih banyak lagi</p>
-                                        <span className="w-28 h-12 bulat rounded-full my-auto"></span>
+                                    <div>
+                                        <h3 className="text-secondary text-2xl font-semibold">Berbagai Macam Split Bill</h3>
+                                        <div className="flex mt-4 mx-auto">
+                                            <p className="text-white text-lg mr-8">Hanya dengan satu sentuhan kamu bisa merasakan berbagai manacam split bill seperti PLN, Internet, PDAM, dan masih banyak lagi</p>
+                                            <span className="w-28 h-12 bulat rounded-full my-auto"></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
