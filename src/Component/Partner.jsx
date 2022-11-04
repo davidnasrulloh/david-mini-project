@@ -12,6 +12,7 @@ const Sponsor = ({
                 data.map((partner)=>{
                     return(
                         <img className="h-12 mx-12 my-6" src={require(`./img/partner/${partner.file_name}`)} alt="" data-aos="fade-down-right" data-aos-duration="800"/>
+                        
                     )
                 })
             }

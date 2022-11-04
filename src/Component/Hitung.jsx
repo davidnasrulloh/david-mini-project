@@ -1,7 +1,6 @@
 import React from "react";
-import "./Hitung.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTrash, faCalculator } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTrash, faCalculator, faRotateRight } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 // import { setNamaItem, setJumlahItem, setHargaItem, setListData } from "../features/hitungSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +11,8 @@ const Hitung = ({
     itemsList,
     handleItemChange,
     handleItemAdd,
-    handleItemRemove
+    handleItemRemove,
+    deleteFillItems
 }) => {
 
     const [jumlahMember, setJumlahMember] = useState(0);
@@ -24,7 +24,11 @@ const Hitung = ({
             totalHargaBarang += +item.jumlahItem * +item.hargaItem 
         ))
         setJumlahPatungan(totalHargaBarang/jumlahMember);
-        toast.success('Perhitungan Patungan Berhasil !');
+        if(jumlahPatungan !== 0){
+            toast.success('Perhitungan Patungan Berhasil !');
+        } else {
+            toast.error('Perhitungan Gagal !');
+        }
     }
 
 
@@ -70,6 +74,7 @@ const Hitung = ({
                                                             className="w-80 py-6 px-8 m-4 h-8 border-primary border-2 rounded-xl text-primary text-lg" 
                                                             placeholder="Masukkan nama item" 
                                                             autoComplete="off"
+                                                            value={singleItems.namaItem}
                                                             onChange={(ev)=>handleItemChange(ev, index)}
                                                             required
                                                             />
@@ -80,7 +85,8 @@ const Hitung = ({
                                                             name="jumlahItem" 
                                                             id="jumlahItem" 
                                                             className="w-80 py-6 px-8 m-4 h-8 border-primary border-2 rounded-xl text-primary text-lg" 
-                                                            placeholder="Jumlah item" 
+                                                            placeholder="Jumlah item"
+                                                            value={singleItems.jumlahItem} 
                                                             onChange={(ev)=>handleItemChange(ev, index)}
                                                             required
                                                             />
@@ -89,7 +95,8 @@ const Hitung = ({
                                                         <input 
                                                             type="number" 
                                                             name="hargaItem" 
-                                                            id="hargaItem" 
+                                                            id="hargaItem"
+                                                            value={singleItems.hargaItem} 
                                                             className="w-80 py-6 px-8 m-4 h-8 border-primary border-2 rounded-xl text-primary text-lg" 
                                                             placeholder="Harga per item" 
                                                             onChange={(ev)=>handleItemChange(ev, index)}
@@ -102,6 +109,18 @@ const Hitung = ({
                                                                 onClick={() => handleItemRemove(index)}
                                                                 className="">
                                                                 <FontAwesomeIcon icon={faTrash} className="text-red-600 text-2xl"/>
+                                                                {/* <span>Remove</span> */}
+                                                            </button>
+                                                            
+                                                        )
+                                                    }
+                                                    {
+                                                        itemsList.length === 1 && (
+                                                            <button 
+                                                                type="button"
+                                                                onClick={(e) => deleteFillItems(e, index)}
+                                                                className="">
+                                                                <FontAwesomeIcon icon={faRotateRight} className="text-slate-600 text-2xl"/>
                                                                 {/* <span>Remove</span> */}
                                                             </button>
                                                             
