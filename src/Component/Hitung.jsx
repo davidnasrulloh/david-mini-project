@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTrash, faCalculator, faRotateRight } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTrash, faCalculator, faRotateRight, faClose } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 // import { setNamaItem, setJumlahItem, setHargaItem, setListData } from "../features/hitungSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,17 +24,22 @@ const Hitung = ({
             totalHargaBarang += +item.jumlahItem * +item.hargaItem 
         ))
         setJumlahPatungan(totalHargaBarang/jumlahMember);
-        if(jumlahPatungan !== 0){
+        if(jumlahPatungan !== 0 && jumlahMember !== 0){
             toast.success('Perhitungan Patungan Berhasil !');
         } else {
             toast.error('Perhitungan Gagal !');
         }
+        // console.log(jumlahPatungan)
     }
-
 
     const handleJumlahMemberChange = (ev) => {
         setJumlahMember(ev.target.value);
         // console.log(jumlahMember);
+    }
+
+    const fillNull = () => {
+        setJumlahMember(0);
+        setJumlahPatungan(0)
     }
 
     return(
@@ -121,15 +126,12 @@ const Hitung = ({
                                                                 onClick={(e) => deleteFillItems(e, index)}
                                                                 className="">
                                                                 <FontAwesomeIcon icon={faRotateRight} className="text-slate-600 text-2xl"/>
-                                                                {/* <span>Remove</span> */}
                                                             </button>
-                                                            
                                                         )
                                                     }
                                                 </div>
                                                 {
                                                     itemsList.length - 1 === index && itemsList.length < 10 && (
-                                                        
                                                         <button className="mr-8 py-2 px-8 mt-4 bg-primary text-white text-lg font-bold rounded-xl max-[768px]:mr-0" type="button"
                                                             onClick={handleItemAdd}><FontAwesomeIcon icon={faPlus} className="mr-4" />Tambah Item</button>
                                                     )
@@ -150,6 +152,11 @@ const Hitung = ({
                                 value={jumlahMember}
                                 onChange={(evt)=>handleJumlahMemberChange(evt)} />
                             </div>
+                            {
+                                jumlahMember !== 0 && (
+                                    <FontAwesomeIcon icon={faClose} onClick={()=>fillNull()} className="text-slate-600 text-2xl"/>
+                                )
+                            }
                         </div>
                     </div>
                     <Toaster
