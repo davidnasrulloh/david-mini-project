@@ -31,7 +31,7 @@ const About = ({
                                     :
                                     teams?.mini_project_data_team.map((team) => (
                                         // import img from `./img/${team.file_path}`;
-                                        <div className="flex flex-col mb-12">
+                                        <div className="flex flex-col mb-12" data-aos="fade-up">
                                             <div key={team.id} className="card w-80 rounded-3xl mx-8" >
                                                 <img src={require(`./img/${team.file_path}`)} alt="Gambar1" className="w-full" />
                                                 <div className="text-center pt-4">
