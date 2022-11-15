@@ -55,7 +55,7 @@ const TentangContainer = () => {
                 </div>
 
                 {/* Why trust  */}
-                <div className="bg-white py-12">
+                <div className="bg-white py-8 mt-20">
                     <div className="container mx-auto">
                         <div className="text-center">
                             <h1 className="text-primary font-bold text-3xl max-[620px]:px-8">Mulai Patungan dengan Mudah, Cepat & Nyaman</h1>
@@ -79,7 +79,7 @@ const TentangContainer = () => {
 
                 {/* Fitur di patungin */}
                 <div className="py-20" id="tentangProgram">
-                    <div className="bg-primary py-12" style={{ backgroundImage: `url(${logoback})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                    <div className="bg-primary py-20" style={{ backgroundImage: `url(${logoback})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
                         <div className="container mx-auto justify-content-center">
                             <h1 className="text-white font-bold text-3xl text-center max-[620px]:px-8">Mulai Patungan dengan Mudah, Cepat & Nyaman</h1>
                             <div className="flex py-12 mt-4 content-why-trust max-[620px]:flex-col max-[620px]:px-12">
@@ -126,7 +126,7 @@ const TentangContainer = () => {
                 </div>
 
                 {/* What he say ? */}
-                <div className="container mx-auto mt-32 max-[620px]:mt-12">
+                <div className="container mx-auto mt-12 max-[620px]:mt-12">
                     <div className="flex flex-col">
                         <h1 className="text-primary font-bold text-3xl text-center mb-12 max-[620px]:mb-2">Apa Kata Mereka?</h1>
                         <div className="flex max-[620px]:flex-col">
