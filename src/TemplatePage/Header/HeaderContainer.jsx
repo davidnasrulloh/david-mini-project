@@ -29,7 +29,7 @@ const Header = () => {
                     <div className="flex justify-center mb-4">
                         <img src={gambar1} alt="Gambar Phone" className="max-[768px]:w-3/4 lg:hidden "/>
                     </div>
-                    <p className="text-xl">Mau bayar patungan tapi kebingungan, dan susah buat ngingetin temen? Atau tidak ada history transaksi yang jelas? Donwload Patungin dengan mudah di platform OS kesayangan anda</p>
+                    <p className="text-xl">Mau bayar patungan tapi kebingungan, dan susah buat ngingetin temen? Atau tidak ada history transaksi yang jelas? Download Patungin dengan mudah di platform OS kesayangan anda</p>
                 </div>
                 <div className="flex mt-6 max-[768px]:flex-col max-[768px]:items-center">
                     <img src={aStore} alt="App Store" className="w-32 mr-3 mb-3"/>

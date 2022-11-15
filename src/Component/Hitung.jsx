@@ -3,9 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash, faCalculator, faRotateRight, faClose } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 // import { setNamaItem, setJumlahItem, setHargaItem, setListData } from "../features/hitungSlice";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from 'react-hot-toast';
-
 
 const Hitung = ({
     itemsList,
@@ -17,17 +16,20 @@ const Hitung = ({
 
     const [jumlahMember, setJumlahMember] = useState(0);
     const [jumlahPatungan, setJumlahPatungan] = useState(0);
-    let totalHargaBarang = 0;
 
     const handleViewTotalPatungan = () => {
+        let totalHargaBarang = 0;
         itemsList.map((item)=>(
             totalHargaBarang += +item.jumlahItem * +item.hargaItem 
         ))
         setJumlahPatungan(totalHargaBarang/jumlahMember);
+
         if(jumlahPatungan !== 0 && jumlahMember !== 0){
             toast.success('Perhitungan Patungan Berhasil !');
         } else {
             toast.error('Perhitungan Gagal !');
+            // setJumlahPatungan(0);
+            // console.log()
         }
         // console.log(jumlahPatungan)
     }
@@ -149,7 +151,9 @@ const Hitung = ({
                                 type="text" 
                                 className=" my-8 border-4 border-primary rounded-xl py-24 w-48 text-center text-5xl text-primary font-bold" 
                                 name="jumlahMember"
+                                // defaultValue={jumlahMember}
                                 value={jumlahMember}
+                                autoComplete="off"
                                 onChange={(evt)=>handleJumlahMemberChange(evt)} />
                             </div>
                             {

@@ -4,6 +4,9 @@ Created By David Nasrulloh
 Masih belum responsive, hanya bisa di tampilkan dengan device laptop untuk resolusi 1920 x 1080
 
 Tampilan landing page
+
+### Link Deploy : https://patungin-miniproject-david.netlify.app/
+
 ![file1](./img-patungin/header.png)
 ![file2](./img-patungin/hitungpatungan.png)
 ![file3](./img-patungin/tentangkami.png)
